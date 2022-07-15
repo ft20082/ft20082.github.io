@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/themes/blue/pace-theme-minimal.min.css">
+  <script src="//cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/pace.min.js"></script>
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"ft20082.github.io","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="Another BigData Programer Log">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Jake">
+<meta property="og:url" content="https://ft20082.github.io/index.html">
+<meta property="og:site_name" content="Jake">
+<meta property="og:description" content="Another BigData Programer Log">
+<meta property="og:locale">
+<meta property="article:author" content="Jake">
+<meta property="article:tag" content="Hadoop Flink Java BigData">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://ft20082.github.io/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : true,
+    isPost : false,
+    lang   : 'zh'
+  };
+</script>
+
+  <title>Jake</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Jake</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">Flink & Hadoop</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+  <a href="https://github.com/ft20082" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content index posts-expand">
+            
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh">
+    <link itemprop="mainEntityOfPage" href="https://ft20082.github.io/posts/2119768524/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Jake">
+      <meta itemprop="description" content="Another BigData Programer Log">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Jake">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/posts/2119768524/" class="post-title-link" itemprop="url">Hadoop 文件写入失败分析</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2022-07-15 10:03:38 / Modified: 10:06:41" itemprop="dateCreated datePublished" datetime="2022-07-15T10:03:38+08:00">2022-07-15</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Hadoop/" itemprop="url" rel="index"><span itemprop="name">Hadoop</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="Symbols count in article">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">Symbols count in article: </span>
+              <span>19k</span>
+            </span>
+            <span class="post-meta-item" title="Reading time">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">Reading time &asymp;</span>
+              <span>17 mins.</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="起因"><a href="#起因" class="headerlink" title="起因"></a>起因</h1><p>集群的 spark 作业报错，内容为</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">22</span>/<span class="number">06</span>/<span class="number">01</span> <span class="number">14</span>:<span class="number">03</span>:<span class="number">43</span> ERROR hdfs.DFSClient: Failed to close file: /user/spark/applicationHistory/application_1640831905154_1811500_1.inprogress with inode: <span class="number">3477505774</span></span><br><span class="line">java.io.IOException: Unable to close file because the last blockBP-<span class="number">293537485</span>-<span class="number">172.18</span><span class="number">.0</span><span class="number">.36</span>-<span class="number">1564638411317</span>:blk_3640214045_2566927779 does not have enough number of replicas.</span><br><span class="line">	at org.apache.hadoop.hdfs.DFSOutputStream.completeFile(DFSOutputStream.java:<span class="number">966</span>)</span><br><span class="line">	at org.apache.hadoop.hdfs.DFSOutputStream.completeFile(DFSOutputStream.java:<span class="number">909</span>)</span><br><span class="line">	at org.apache.hadoop.hdfs.DFSOutputStream.closeImpl(DFSOutputStream.java:<span class="number">892</span>)</span><br><span class="line">	at org.apache.hadoop.hdfs.DFSOutputStream.close(DFSOutputStream.java:<span class="number">847</span>)</span><br><span class="line">	at org.apache.hadoop.hdfs.DFSClient.closeAllFilesBeingWritten(DFSClient.java:<span class="number">609</span>)</span><br><span class="line">	at org.apache.hadoop.hdfs.DFSClient.closeOutputStreams(DFSClient.java:<span class="number">641</span>)</span><br><span class="line">	at org.apache.hadoop.hdfs.DistributedFileSystem.close(DistributedFileSystem.java:<span class="number">1278</span>)</span><br><span class="line">	at org.apache.hadoop.fs.FileSystem$Cache.closeAll(FileSystem.java:<span class="number">3353</span>)</span><br><span class="line">	at org.apache.hadoop.fs.FileSystem$Cache$ClientFinalizer.run(FileSystem.java:<span class="number">3370</span>)</span><br><span class="line">	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:<span class="number">511</span>)</span><br><span class="line">	at java.util.concurrent.FutureTask.run(FutureTask.java:<span class="number">266</span>)</span><br><span class="line">	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:<span class="number">1149</span>)</span><br><span class="line">	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:<span class="number">624</span>)</span><br><span class="line">	at java.lang.Thread.run(Thread.java:<span class="number">748</span>)</span><br></pre></td></tr></table></figure>
+
+<h1 id="排查流程"><a href="#排查流程" class="headerlink" title="排查流程"></a>排查流程</h1><h2 id="Hadoop-客户端排查"><a href="#Hadoop-客户端排查" class="headerlink" title="Hadoop 客户端排查"></a>Hadoop 客户端排查</h2><p>报错主要原因是  <code>HADOOP</code>  客户端写入文件没有完成，重试多次之后会抛出此错误。</p>
+<p>具体代码在  <code>org.apache.hadoop.hdfs.DFSOutputStream</code> 的 <code>completeFile</code> 方法中</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title function_">completeFile</span><span class="params">(ExtendedBlock last)</span> <span class="keyword">throws</span> IOException &#123;</span><br><span class="line">    <span class="type">long</span> <span class="variable">localstart</span> <span class="operator">=</span> Time.monotonicNow();</span><br><span class="line">    <span class="keyword">final</span> <span class="type">DfsClientConf</span> <span class="variable">conf</span> <span class="operator">=</span> dfsClient.getConf();</span><br><span class="line">    <span class="comment">// 初始休眠时间</span></span><br><span class="line">    <span class="type">long</span> <span class="variable">sleeptime</span> <span class="operator">=</span> conf.getBlockWriteLocateFollowingInitialDelayMs();</span><br><span class="line">    <span class="comment">// 最大休眠时间</span></span><br><span class="line">    <span class="type">long</span> <span class="variable">maxSleepTime</span> <span class="operator">=</span> conf.getBlockWriteLocateFollowingMaxDelayMs();</span><br><span class="line">    <span class="type">boolean</span> <span class="variable">fileComplete</span> <span class="operator">=</span> <span class="literal">false</span>;</span><br><span class="line">    <span class="comment">// 获取重试次数</span></span><br><span class="line">    <span class="type">int</span> <span class="variable">retries</span> <span class="operator">=</span> conf.getNumBlockWriteLocateFollowingRetry();</span><br><span class="line">    <span class="keyword">while</span> (!fileComplete) &#123;</span><br><span class="line">      <span class="comment">// 通过 rpc 调用 namenode 的 complete 方法，来获取返回结果</span></span><br><span class="line">      fileComplete =</span><br><span class="line">          dfsClient.namenode.complete(src, dfsClient.clientName, last, fileId);</span><br><span class="line">      <span class="comment">// 如果没有完成，则重试，如果重试 5 次还是失败，则抛出异常</span></span><br><span class="line">      <span class="keyword">if</span> (!fileComplete) &#123;</span><br><span class="line">        <span class="keyword">final</span> <span class="type">int</span> <span class="variable">hdfsTimeout</span> <span class="operator">=</span> conf.getHdfsTimeout();</span><br><span class="line">        <span class="keyword">if</span> (!dfsClient.clientRunning</span><br><span class="line">            || (hdfsTimeout &gt; <span class="number">0</span></span><br><span class="line">                &amp;&amp; localstart + hdfsTimeout &lt; Time.monotonicNow())) &#123;</span><br><span class="line">          <span class="type">String</span> <span class="variable">msg</span> <span class="operator">=</span> <span class="string">&quot;Unable to close file because dfsclient &quot;</span> +</span><br><span class="line">              <span class="string">&quot; was unable to contact the HDFS servers. clientRunning &quot;</span> +</span><br><span class="line">              dfsClient.clientRunning + <span class="string">&quot; hdfsTimeout &quot;</span> + hdfsTimeout;</span><br><span class="line">          DFSClient.LOG.info(msg);</span><br><span class="line">          <span class="keyword">throw</span> <span class="keyword">new</span> <span class="title class_">IOException</span>(msg);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">try</span> (<span class="type">TraceScope</span> <span class="variable">scope</span> <span class="operator">=</span> dfsClient.getTracer()</span><br><span class="line">            .newScope(<span class="string">&quot;DFSOutputStream#completeFile: Retry&quot;</span>)) &#123;</span><br><span class="line">          scope.addKVAnnotation(<span class="string">&quot;retries left&quot;</span>, retries);</span><br><span class="line">          scope.addKVAnnotation(<span class="string">&quot;sleeptime (sleeping for)&quot;</span>, sleeptime);</span><br><span class="line">          <span class="keyword">if</span> (retries == <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> <span class="title class_">IOException</span>(<span class="string">&quot;Unable to close file because the last block &quot;</span></span><br><span class="line">                + last + <span class="string">&quot; does not have enough number of replicas.&quot;</span>);</span><br><span class="line">          &#125;</span><br><span class="line">          retries--;</span><br><span class="line">          Thread.sleep(sleeptime);</span><br><span class="line">          sleeptime = calculateDelayForNextRetry(sleeptime, maxSleepTime);</span><br><span class="line">          <span class="keyword">if</span> (Time.monotonicNow() - localstart &gt; <span class="number">5000</span>) &#123;</span><br><span class="line">            DFSClient.LOG.info(<span class="string">&quot;Could not complete &quot;</span> + src + <span class="string">&quot; retrying...&quot;</span>);</span><br><span class="line">          &#125;</span><br><span class="line">        &#125; <span class="keyword">catch</span> (InterruptedException ie) &#123;</span><br><span class="line">          DFSClient.LOG.warn(<span class="string">&quot;Caught exception &quot;</span>, ie);</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+
+<p>其中重试次数为  <code>int retries = conf.getNumBlockWriteLocateFollowingRetry();</code></p>
+<p>获取的配置项是 <code>dfs.client.block.write.locateFollowingBlock.retries</code>，解释在 <a target="_blank" rel="noopener" href="https://hadoop.apache.org/docs/r3.2.3/hadoop-project-dist/hadoop-hdfs/hdfs-default.xml">hdfs-default.xml</a> 文件里，默认值是 5 。</p>
+<h2 id="集群监控"><a href="#集群监控" class="headerlink" title="集群监控"></a>集群监控</h2><p>从集群监控发现，当时主要异常的指标有 </p>
+<ol>
+<li>RPC 处理时间超时</li>
+<li>RPC 队列时间超过</li>
+<li>定时等待的线程变少了</li>
+<li>等待的线程变多了</li>
+</ol>
+<p>从以上 4 个主要异常点来看，表象问题是rpc 处理时间和队列时间偏长</p>
+<h1 id="原因分析"><a href="#原因分析" class="headerlink" title="原因分析"></a>原因分析</h1><p>客户端报错的原因是  <code>NameNode</code>  没有及时确认文件写入完成，重试逻辑是每次休眠是上一次休眠的 2 倍时间，直到最大等待时间。等待初始时间为  <code>dfs.client.block.write.locateFollowingBlock.initial.delay.ms</code> 默认值是 400ms，等待最大时间 <code>dfs.client.locateFollowingBlock.max.delay.ms</code> 的默认值是 60000，即 60 秒。重试 5 次需要等待 <code>400</code> &#x2F; <code>800</code> &#x2F; <code>1600</code> &#x2F; <code>3200</code> &#x2F; <code>6400</code>  共需要 12400 毫秒。</p>
+<h1 id="NameNode-RPC-延迟分析"><a href="#NameNode-RPC-延迟分析" class="headerlink" title="NameNode RPC 延迟分析"></a>NameNode RPC 延迟分析</h1><h2 id="Hadoop-的-RPC"><a href="#Hadoop-的-RPC" class="headerlink" title="Hadoop 的 RPC"></a>Hadoop 的 RPC</h2><p>RPC(Remote Procedure Call) 远程过程调用，通常采用客户端&#x2F;服务端模型，客户端像调用本地程序一样调用服务端的方法，并等待服务端响应，服务端执行完成后，把执行结果进行序列化后返回给客户端，客户端进行反序列化后继续执行后续逻辑。Hadoop 的 RPC 是自己实现的客户端和服务端，序列化反序列化使用的则是 protobuf 2.5。</p>
+<h2 id="Namenode-的-RPC"><a href="#Namenode-的-RPC" class="headerlink" title="Namenode 的 RPC"></a>Namenode 的 RPC</h2><p>客户端通过执行  <code>fileComplete = dfsClient.namenode.complete(src, dfsClient.clientName, last, fileId);</code>  后，会调用NameNode 的  <code>org.apache.hadoop.hdfs.server.namenode.FSNameSystem</code> 类中的 <code>completeFile</code> 方法</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">boolean</span> <span class="title function_">completeFile</span><span class="params">(<span class="keyword">final</span> String src, String holder,</span></span><br><span class="line"><span class="params">                       ExtendedBlock last, <span class="type">long</span> fileId)</span></span><br><span class="line">    <span class="keyword">throws</span> IOException &#123;</span><br><span class="line">    <span class="type">boolean</span> <span class="variable">success</span> <span class="operator">=</span> <span class="literal">false</span>;</span><br><span class="line">    checkOperation(OperationCategory.WRITE);</span><br><span class="line">    <span class="keyword">final</span> <span class="type">FSPermissionChecker</span> <span class="variable">pc</span> <span class="operator">=</span> getPermissionChecker();</span><br><span class="line">    FSPermissionChecker.setOperationType(<span class="literal">null</span>);</span><br><span class="line">    writeLock();</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">      checkOperation(OperationCategory.WRITE);</span><br><span class="line">      checkNameNodeSafeMode(<span class="string">&quot;Cannot complete file &quot;</span> + src);</span><br><span class="line">      <span class="comment">// 执行完成文件操作，会检查该文件的最小复制块是否达到要求</span></span><br><span class="line">      success = FSDirWriteFileOp.completeFile(<span class="built_in">this</span>, pc, src, holder, last,</span><br><span class="line">                                              fileId);</span><br><span class="line">    &#125; <span class="keyword">finally</span> &#123;</span><br><span class="line">      writeUnlock(<span class="string">&quot;completeFile&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    getEditLog().logSync();</span><br><span class="line">    <span class="keyword">if</span> (success) &#123;</span><br><span class="line">      NameNode.stateChangeLog.info(<span class="string">&quot;DIR* completeFile: &quot;</span> + src</span><br><span class="line">          + <span class="string">&quot; is closed by &quot;</span> + holder);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> success;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+
+<p>完成文件操作后调用的是  <code>org.apache.hadoop.hdfs.server.namenode.FSDirWriteFileOp</code>  中的  <code>completeFileInternal</code>  方法</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> <span class="keyword">static</span> <span class="type">boolean</span> <span class="title function_">completeFileInternal</span><span class="params">(</span></span><br><span class="line"><span class="params">      FSNamesystem fsn, INodesInPath iip,</span></span><br><span class="line"><span class="params">      String holder, Block last, <span class="type">long</span> fileId)</span></span><br><span class="line">      <span class="keyword">throws</span> IOException &#123;</span><br><span class="line">    <span class="keyword">assert</span> fsn.hasWriteLock();</span><br><span class="line">    <span class="keyword">final</span> <span class="type">String</span> <span class="variable">src</span> <span class="operator">=</span> iip.getPath();</span><br><span class="line">    <span class="keyword">final</span> INodeFile pendingFile;</span><br><span class="line">    <span class="type">INode</span> <span class="variable">inode</span> <span class="operator">=</span> <span class="literal">null</span>;</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">      inode = iip.getLastINode();</span><br><span class="line">      pendingFile = fsn.checkLease(iip, holder, fileId);</span><br><span class="line">    &#125; <span class="keyword">catch</span> (LeaseExpiredException lee) &#123;</span><br><span class="line">      <span class="keyword">if</span> (inode != <span class="literal">null</span> &amp;&amp; inode.isFile() &amp;&amp;</span><br><span class="line">          !inode.asFile().isUnderConstruction()) &#123;</span><br><span class="line">        <span class="comment">// This could be a retry RPC - i.e the client tried to close</span></span><br><span class="line">        <span class="comment">// the file, but missed the RPC response. Thus, it is trying</span></span><br><span class="line">        <span class="comment">// again to close the file. If the file still exists and</span></span><br><span class="line">        <span class="comment">// the client&#x27;s view of the last block matches the actual</span></span><br><span class="line">        <span class="comment">// last block, then we&#x27;ll treat it as a successful close.</span></span><br><span class="line">        <span class="comment">// See HDFS-3031.</span></span><br><span class="line">        <span class="keyword">final</span> <span class="type">Block</span> <span class="variable">realLastBlock</span> <span class="operator">=</span> inode.asFile().getLastBlock();</span><br><span class="line">        <span class="keyword">if</span> (Block.matchingIdAndGenStamp(last, realLastBlock)) &#123;</span><br><span class="line">          NameNode.stateChangeLog.info(<span class="string">&quot;DIR* completeFile: &quot;</span> +</span><br><span class="line">              <span class="string">&quot;request from &quot;</span> + holder + <span class="string">&quot; to complete inode &quot;</span> + fileId +</span><br><span class="line">              <span class="string">&quot;(&quot;</span> + src + <span class="string">&quot;) which is already closed. But, it appears to be &quot;</span> +</span><br><span class="line">              <span class="string">&quot;an RPC retry. Returning success&quot;</span>);</span><br><span class="line">          <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="keyword">throw</span> lee;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 检查文件进度，如果文件个数小于 2 个 block 时此步骤不会生效</span></span><br><span class="line">    <span class="comment">// Check the state of the penultimate block. It should be completed</span></span><br><span class="line">    <span class="comment">// before attempting to complete the last one.</span></span><br><span class="line">    <span class="keyword">if</span> (!fsn.checkFileProgress(src, pendingFile, <span class="literal">false</span>)) &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">  	<span class="comment">// 此步骤进行提交和完成文件，最终会调用 BlockManger 中的 commitOrCompleteLastBlock 来更新 block 中的 uc 状态</span></span><br><span class="line">    <span class="comment">// commit the last block and complete it if it has minimum replicas</span></span><br><span class="line">    fsn.commitOrCompleteLastBlock(pendingFile, iip, last);</span><br><span class="line">		<span class="comment">// 此步骤是检查全部文件块的完成情况</span></span><br><span class="line">    <span class="keyword">if</span> (!fsn.checkFileProgress(src, pendingFile, <span class="literal">true</span>)) &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    fsn.addCommittedBlocksToPending(pendingFile);</span><br><span class="line"></span><br><span class="line">    fsn.finalizeINodeFileUnderConstruction(src, pendingFile,</span><br><span class="line">        Snapshot.CURRENT_STATE_ID, <span class="literal">true</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+
+<p>通过 <code>org.apache.hadoop.hdfs.server.namenode.FSNamesystem</code>  的 <code>checkFileProgress</code> 方法返回</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"> <span class="comment">// Check the state of the penultimate block. It should be completed</span></span><br><span class="line"> <span class="comment">// before attempting to complete the last one.</span></span><br><span class="line"> <span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Check that the indicated file&#x27;s blocks are present and</span></span><br><span class="line"><span class="comment"> * replicated.  If not, return false. If checkall is true, then check</span></span><br><span class="line"><span class="comment"> * all blocks, otherwise check only penultimate block.</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="type">boolean</span> <span class="title function_">checkFileProgress</span><span class="params">(String src, INodeFile v, <span class="type">boolean</span> checkall)</span> &#123;</span><br><span class="line">  <span class="keyword">assert</span> <span class="title function_">hasReadLock</span><span class="params">()</span>;</span><br><span class="line">  <span class="keyword">if</span> (checkall) &#123;</span><br><span class="line">    <span class="keyword">return</span> checkBlocksComplete(src, <span class="literal">true</span>, v.getBlocks());</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="keyword">final</span> BlockInfo[] blocks = v.getBlocks();</span><br><span class="line">    <span class="comment">// 检查 block 长度</span></span><br><span class="line">    <span class="comment">// numCommittedAllowed 设置为 0</span></span><br><span class="line">    <span class="comment">// 也就是说，block 的长度需要大于 2 才生效</span></span><br><span class="line">    <span class="keyword">final</span> <span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> blocks.length - numCommittedAllowed - <span class="number">2</span>;</span><br><span class="line">    <span class="keyword">return</span> i &lt; <span class="number">0</span> || blocks[i] == <span class="literal">null</span></span><br><span class="line">        || checkBlocksComplete(src, <span class="literal">false</span>, blocks[i]);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 检查块是否完成</span></span><br><span class="line"><span class="comment"> * Check if the blocks are COMPLETE;</span></span><br><span class="line"><span class="comment"> * it may allow the last block to be COMMITTED.</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">private</span> <span class="type">boolean</span> <span class="title function_">checkBlocksComplete</span><span class="params">(String src, <span class="type">boolean</span> allowCommittedBlock,</span></span><br><span class="line"><span class="params">    BlockInfo... blocks)</span> &#123;</span><br><span class="line">  <span class="keyword">final</span> <span class="type">int</span> <span class="variable">n</span> <span class="operator">=</span> allowCommittedBlock? numCommittedAllowed: <span class="number">0</span>;</span><br><span class="line">  <span class="keyword">for</span>(<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; blocks.length; i++) &#123;</span><br><span class="line">    <span class="comment">// 需要从 blockManager 获取当前 block 复制份数并检测是否达到的最小复制数</span></span><br><span class="line">    <span class="keyword">final</span> <span class="type">short</span> <span class="variable">min</span> <span class="operator">=</span> blockManager.getMinStorageNum(blocks[i]);</span><br><span class="line">    <span class="comment">// 判断 block 的 BlockUCState status 是否为 BlockUCState.COMPLETE, 如果不是，则返回错误内容</span></span><br><span class="line">    <span class="keyword">final</span> <span class="type">String</span> <span class="variable">err</span> <span class="operator">=</span> INodeFile.checkBlockComplete(blocks, i, n, min);</span><br><span class="line">    <span class="keyword">if</span> (err != <span class="literal">null</span>) &#123;</span><br><span class="line">      <span class="keyword">final</span> <span class="type">int</span> <span class="variable">numNodes</span> <span class="operator">=</span> blocks[i].numNodes();</span><br><span class="line">      LOG.info(<span class="string">&quot;BLOCK* &quot;</span> + err + <span class="string">&quot;(numNodes= &quot;</span> + numNodes</span><br><span class="line">          + (numNodes &lt; min ? <span class="string">&quot; &lt; &quot;</span> : <span class="string">&quot; &gt;= &quot;</span>)</span><br><span class="line">          + <span class="string">&quot; minimum = &quot;</span> + min + <span class="string">&quot;) in file &quot;</span> + src);</span><br><span class="line">      <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>上个步骤中的 <code>fsn.commitOrCompleteLastBlock</code> 最终调用的是 <code>org.apache.hadoop.hdfs.server.blockmanagement.BlockManager </code>中的<code>commitOrCompleteLastBlock</code>方法。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">   * Commit the last block of the file and mark it as complete if it has</span></span><br><span class="line"><span class="comment">   * meets the minimum redundancy requirement</span></span><br><span class="line"><span class="comment">   * </span></span><br><span class="line"><span class="comment">   * <span class="doctag">@param</span> bc block collection</span></span><br><span class="line"><span class="comment">   * <span class="doctag">@param</span> commitBlock - contains client reported block length and generation</span></span><br><span class="line"><span class="comment">   * <span class="doctag">@param</span> iip - INodes in path to bc</span></span><br><span class="line"><span class="comment">   * <span class="doctag">@return</span> true if the last block is changed to committed state.</span></span><br><span class="line"><span class="comment">   * <span class="doctag">@throws</span> IOException if the block does not have at least a minimal number</span></span><br><span class="line"><span class="comment">   * of replicas reported from data-nodes.</span></span><br><span class="line"><span class="comment">   */</span></span><br><span class="line">  <span class="keyword">public</span> <span class="type">boolean</span> <span class="title function_">commitOrCompleteLastBlock</span><span class="params">(BlockCollection bc,</span></span><br><span class="line"><span class="params">      Block commitBlock, INodesInPath iip)</span> <span class="keyword">throws</span> IOException &#123;</span><br><span class="line">    <span class="keyword">if</span>(commitBlock == <span class="literal">null</span>)</span><br><span class="line">      <span class="keyword">return</span> <span class="literal">false</span>; <span class="comment">// not committing, this is a block allocation retry</span></span><br><span class="line">    <span class="type">BlockInfo</span> <span class="variable">lastBlock</span> <span class="operator">=</span> bc.getLastBlock();</span><br><span class="line">    <span class="keyword">if</span>(lastBlock == <span class="literal">null</span>)</span><br><span class="line">      <span class="keyword">return</span> <span class="literal">false</span>; <span class="comment">// no blockcommitOrCompleteLastBlocks in file yet</span></span><br><span class="line">    <span class="keyword">if</span>(lastBlock.isComplete())</span><br><span class="line">      <span class="keyword">return</span> <span class="literal">false</span>; <span class="comment">// already completed (e.g. by syncBlock)</span></span><br><span class="line">    <span class="keyword">if</span>(lastBlock.isUnderRecovery()) &#123;</span><br><span class="line">      <span class="keyword">throw</span> <span class="keyword">new</span> <span class="title class_">IOException</span>(<span class="string">&quot;Commit or complete block &quot;</span> + commitBlock +</span><br><span class="line">          <span class="string">&quot;, whereas it is under recovery.&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">final</span> <span class="type">boolean</span> <span class="variable">committed</span> <span class="operator">=</span> commitBlock(lastBlock, commitBlock);</span><br><span class="line">    <span class="keyword">if</span> (committed &amp;&amp; lastBlock.isStriped()) &#123;</span><br><span class="line">      <span class="comment">// update scheduled size for DatanodeStorages that do not store any</span></span><br><span class="line">      <span class="comment">// internal blocks</span></span><br><span class="line">      lastBlock.getUnderConstructionFeature()</span><br><span class="line">          .updateStorageScheduledSize((BlockInfoStriped) lastBlock);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 这里来判断块的复制份数</span></span><br><span class="line">    <span class="comment">// Count replicas on decommissioning nodes, as these will not be</span></span><br><span class="line">    <span class="comment">// decommissioned unless recovery/completing last block has finished</span></span><br><span class="line">    <span class="type">NumberReplicas</span> <span class="variable">numReplicas</span> <span class="operator">=</span> countNodes(lastBlock);</span><br><span class="line">    <span class="type">int</span> <span class="variable">numUsableReplicas</span> <span class="operator">=</span> numReplicas.liveReplicas() +</span><br><span class="line">        numReplicas.decommissioning() +</span><br><span class="line">        numReplicas.liveEnteringMaintenanceReplicas();</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 如果到达最小块数，则执行 completeBlock 操作，即该块的 uc 状态改变为完成</span></span><br><span class="line">    <span class="comment">// hasMinStorage 方法会查询该 block 里的 countNodes</span></span><br><span class="line">    <span class="comment">// NumberReplicas countNodes(BlockInfo b, boolean inStartupSafeMode)</span></span><br><span class="line">    <span class="comment">// countNodes 会读取 block 里 getDataNode 中会获取 storageInfo 的信息，根据 storage 判断服务器信息</span></span><br><span class="line">    <span class="comment">// DatanodeStorageInfo storage = getStorageInfo(index);</span></span><br><span class="line">    <span class="keyword">if</span> (hasMinStorage(lastBlock, numUsableReplicas)) &#123;</span><br><span class="line">      <span class="keyword">if</span> (committed) &#123;</span><br><span class="line">        addExpectedReplicasToPending(lastBlock);</span><br><span class="line">      &#125;</span><br><span class="line">      completeBlock(lastBlock, iip, <span class="literal">false</span>);</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (pendingRecoveryBlocks.isUnderRecovery(lastBlock)) &#123;</span><br><span class="line">      <span class="comment">// We&#x27;ve just finished recovery for this block, complete</span></span><br><span class="line">      <span class="comment">// the block forcibly disregarding number of replicas.</span></span><br><span class="line">      <span class="comment">// This is to ignore minReplication, the block will be closed</span></span><br><span class="line">      <span class="comment">// and then replicated out.</span></span><br><span class="line">      completeBlock(lastBlock, iip, <span class="literal">true</span>);</span><br><span class="line">      updateNeededReconstructions(lastBlock, <span class="number">1</span>, <span class="number">0</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> committed;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+
+<p><code>INodeFile.checkBlockComplete</code> 需要判断 Block 中的状态，调用的是 <code>org.apache.hadoop.hdfs.server.blockmanagement.BlockInfo</code> 中的 <code>getBlockUCState</code> 方法，也就是说，需要 <code>uc</code> 为空或者 <code>uc.getBlockUCState()</code>的状态就是 <code>COMPLETE</code></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> BlockUCState <span class="title function_">getBlockUCState</span><span class="params">()</span> &#123;</span><br><span class="line">  <span class="type">return</span> <span class="variable">uc</span> <span class="operator">=</span>= <span class="literal">null</span> ? BlockUCState.COMPLETE : uc.getBlockUCState();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>通过查询 Namenode  服务端日志：</p>
+<blockquote>
+<p>2022-06-10 06:22:00,480 INFO org.apache.hadoop.hdfs.server.namenode.FSNamesystem: BLOCK* blk_3663560038_2590274987 is COMMITTED but not COMPLETE(numNodes&#x3D; 0 &lt;  minimum &#x3D; 1) in file &#x2F;path-to-file</p>
+</blockquote>
+<p>从此日志中可以发现，主要是因为 numNodes &#x3D; 0，但是 minimum&#x3D;1，即当前 block 中节点信息还没有被更新导致的。</p>
+<h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><p>通过分析得出，之所以报错是因为  <code>Namenode</code> 发现该文件某些块没有达到最小复制数，块的状态更新在  <code>Namenode</code>  的  <code>BlockManage</code>  中，如果 <code>completeFile</code> 完成需要确保该文件的所有的 <code>block</code> 都有最小复制数。</p>
+<h1 id="BlockManager-状态更新"><a href="#BlockManager-状态更新" class="headerlink" title="BlockManager 状态更新"></a>BlockManager 状态更新</h1><h2 id="HDFS-写文件"><a href="#HDFS-写文件" class="headerlink" title="HDFS 写文件"></a>HDFS 写文件</h2><p><img src="https://cdn.jsdelivr.net/gh/ft20082/image/item/hdfs-write-file.png" alt="Hadoop Write File"></p>
+<h2 id="客户端写文件示例"><a href="#客户端写文件示例" class="headerlink" title="客户端写文件示例"></a>客户端写文件示例</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">writeFileToHDFS</span><span class="params">()</span> <span class="keyword">throws</span> IOException &#123;</span><br><span class="line">  <span class="type">Configuration</span> <span class="variable">configuration</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Configuration</span>();</span><br><span class="line">  configuration.set(<span class="string">&quot;fs.defaultFS&quot;</span>, <span class="string">&quot;hdfs://localhost:9000&quot;</span>);</span><br><span class="line">  configuration.addResource(<span class="keyword">new</span> <span class="title class_">Path</span>(<span class="string">&quot;/HADOOP_HOME/conf/core-site.xml&quot;</span>));</span><br><span class="line">  configuration.addResource(<span class="keyword">new</span> <span class="title class_">Path</span>(<span class="string">&quot;/HADOOP_HOME/conf/hdfs-site.xml&quot;</span>));</span><br><span class="line">  <span class="type">FileSystem</span> <span class="variable">fileSystem</span> <span class="operator">=</span> FileSystem.get(configuration);</span><br><span class="line">  <span class="comment">//Create a path</span></span><br><span class="line">  <span class="type">String</span> <span class="variable">fileName</span> <span class="operator">=</span> <span class="string">&quot;input.txt&quot;</span>;</span><br><span class="line">  <span class="type">Path</span> <span class="variable">hdfsWritePath</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Path</span>(<span class="string">&quot;/user/yourdesiredpath/&quot;</span> + fileName);</span><br><span class="line">  <span class="type">FSDataOutputStream</span> <span class="variable">fsDataOutputStream</span> <span class="operator">=</span> fileSystem.create(hdfsWritePath,<span class="literal">true</span>);</span><br><span class="line">  fsDataOutputStream.writeBytes(<span class="string">&quot;write contents&quot;</span>.getBytes(StandardCharsets.UTF_8));</span><br><span class="line">  fsDataOutputStream.close();</span><br><span class="line">  fileSystem.close();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>示例中，首先要创建一个 FileSystem 实例，根据配置文件，实例化  <code>org.apache.hadoop.fs.Hdfs</code>，同时会初始化 <code>org.apache.hadoop.hdfs.DFSClient</code>，在调用  <code>create</code> 时实际调用的是  <code>dfs.createWrappedOutputStream</code> 返回 <code>DFSOutputStream</code>，使用  <code>writeBytes</code> 写入文件时，以  <code>DFSPacket</code>  逐个由 <code>DataStreamer</code> 发送。</p>
+<h2 id="DanaNode-流式写文件"><a href="#DanaNode-流式写文件" class="headerlink" title="DanaNode 流式写文件"></a>DanaNode 流式写文件</h2><p>数据在多个节点传输时，<code>DFSOutputStream</code>  写入一个 <code> PIPELINE</code>，即由 1 个客户端和多个 <code>DataNode</code> 连接起来的数据通道，当客户端开始写文件时，会实时写进第一个节点，再写到第二个节点，依次类推写到最后一个节点。写入完成后，会返回 <code>PipelineAck</code> 确认。<code>DFSOutputStream</code> 维护一个  <code>DFSPacket</code> 队列  <code>dataQueue</code>， 当数据写入队列后，<code>DFSOutputStream</code> 先申请一个块，并创建 <code>PIPELINE</code>，数据写入，当达到块的最大数据量时，会先关闭这个块，并关闭相关连接。继续写入数据时会重新申请一个块，<code>DataStreamer</code> 调用  <code>createBlockOutputStream</code>  重新创建 <code>PIPELINE</code>  并写入数据，直至文件写入完成。</p>
+<p>数据传输协议  <code>DataTransferProtocol</code>  有 2 个实现，一是发送端  <code>org.apache.hadoop.hdfs.protocol.datatransfer.Sender</code> ，另外是接收端  <code>org.apache.hadoop.hdfs.server.datanode.DataXceiver</code>。 其中发送是在客户端和 <code>Datanode</code> 里都有使用，而接收端只有在 <code>Datanode</code> 里使用。</p>
+<h2 id="DataNode-数据写入流程"><a href="#DataNode-数据写入流程" class="headerlink" title="DataNode 数据写入流程"></a>DataNode 数据写入流程</h2><ol>
+<li>客户端向  <code>Namenode</code>  发送写入文件请求，在  <code>org.apache.hadoop.hdfs.DFSOutputStream </code>  里的方法  <code>newStreamForCreate</code>  调用  <code>dfsClient.namenode.create</code>  创建写入文件并返回给客户端</li>
+<li>客户端创建  <code>DFSOutputStream</code>  写入数据，该实例会创建一个  <code>org.apache.hadoop.hdfs.DataStreamer</code>  线程准备写入数据。 </li>
+<li><code>FSDataOutputStream</code>  写入的数据时会被组装成  <code>DFSPacket</code>   放入到  <code>DataStreamer</code>  里的  <code>dataQueue</code>  中，线程 <code>DataStreamer</code> 从队列里读取  <code>DFSPacket</code>  并发送到   <code>PIPELINE</code>  里。如果管道没有初始化，则通过  <code>org.apache.hadoop.hdfs.DataStreamer.nextBlockOutputStream</code>  里调用  <code>DFSOutputStream.addBlock</code>  往该文件添加 Block 返回地址并初始化建立连接，使用  <code>org.apache.hadoop.hdfs.protocol.datatransfer.Sender</code>  中的  <code>writeBlock</code>  方法发送创建连接后的初始验证数据包  <code>OpWriteBlockProto</code> </li>
+<li>当  <code>DataStreamer</code> 创建连接时，连接到  <code>DataNode</code>  中的  <code>org.apache.hadoop.hdfs.server.datanode.DataXceiver</code>，<code>DataNode</code>       为每个写入连接分配一个线程，并建立连接。在  <code>DataXceiver</code>  读取到  <code>Sender</code>  发送的  <code>OpWriteBlockProto</code>  后进行校验，校验通过，则调用  <code>writeBlock</code>  方法， 该方法会根据 targets 选择是否开启下一  <code>DataNode</code>  连接，往下个节点发送也使用的是  <code>Sender</code> 类的  <code>writeBlock</code> 方法，依次类推，如果是 3 副本，则会重复 3 次此操作。调用  <code>writeBlock</code>  的时候会把 targets  数组的第一个节点丢弃，所以会依次连接 targes 列表中所有节点，通过  <code>setCurrentBlockReceiver</code>  方法设置接收 Block 的对象  <code>org.apache.hadoop.hdfs.server.datanode.BlockReceiver</code>，在调用  <code>BlockReceiver.receiveBlock</code>  后开始接收  <code>DFSPacket</code>  数据，<code>receiveBlock</code>  方法会起一个  <code>PacketResponder</code>  线程来发送返回的  <code>Packet</code> 。</li>
+<li><code>BlockReceiver</code>  在初始化的时候，会创建  <code>ReplicaHandler</code>，在初始写文件时，即状态为  <code>PIPELINE_SETUP_CREATE</code>  状态，同时调用 RPC  <code>datanode.notifyNamenodeReceivingBlock</code>  发送消息给  <code>NameNode</code> ，通知正在接收 Block，当 BlockStatus 为  <code>BlockStatus.RECEIVING_BLOCK</code>  时，会等到下次心跳的时候统一发送，如果是状态是  <code>BlockStatus.RECEIVED_BLOCK</code>  时，则会立即发送。最终会使用 RPC 调用 <code>NameNode</code> 的  <code>namenode.blockReceivedAndDeleted</code>  方法实现。</li>
+<li><code>BlockReceiver</code>  中  <code>receivePacket</code>  方法会一直执行收到最后一个  <code>DFSPacket</code>，即  <code>PacketHeader</code>   通过  <code>isLastPacketInBlock</code> 来判断是否是该 Block 最后一个 <code>DFSPacket</code>， 每接收到一个  <code>DFSPacket</code>，如果存在下个节点，则先把数据写入到下个节点，然后通过  <code>streams.writeDataToDisk</code>  和  <code>checksumOut.write</code>  写入本地磁盘，磁盘上会有 2 个文件，一个是数据文件，一个是 checkSum。写入完成后，往  <code>PacketResponder</code>  里的  <code>ackQueue</code>  里写入一个 <code>Packet</code> 主要信息有当前包的序号、是否是当前 <em>Block</em> 的最后一个，Block 的位置，系统时间，ack状态。</li>
+<li><code>PacketResponder</code> 收到了最后一个 <code>Packet</code> 后，则开始执行 <code>finalizeBlock</code> 方法，该方法完成 Block 的写入后会执行 <code>datanode.closeBlock</code> 方法，即调用 <code>DataNode.notifyNamenodeReceivedBlock</code> 方法上报已经收到的块。如果状态是 <code>BlockStatus.RECEIVED_BLOCK</code> 时，则会立即通过 RPC 发送给  <code>NameNode</code> </li>
+<li>当一个  <code>DFSPacket</code>   被发送到每个节点时， <code>BlockReceiver</code>  类中的  <code>PacketResponder</code>  内部类会根据是否是最后一个节点来决定往上游写入流返回数据  <code>org.apache.hadoop.hdfs.protocol.datatransfer.PipelineAck</code>  。<ul>
+<li>如果是最后一个节点，则会根据  <code>DFSPacket</code>  的数据写入、校验情况决定是否返回成功或者校验失败</li>
+<li>如果是中间节点，则优先接收下游节点返回的 <code>PipelineAck</code> 并判断状态，如果正常，则添加当前节点的状态后返回会上游</li>
+</ul>
+</li>
+<li>客户端的 <code>DataStreamer</code>  在每次创建一个新的 block 时，通过  <code>initDataStreaming</code>  方法初始化  <code>DataStreamer</code>  类，并初始化  <code>ResponseProcessor</code>  线程，该线程的作用接收  <code>DataNode</code>  的返回  <code>PipelineAck</code>，检查并校验该  <code>DFSPacket</code>  是否写入成功，如果不成功，则抛出 IO 异常。如果是该 Block 的最后一个 Packet，则验证完成后退出。</li>
+<li>当写入一个文件比较大需要写入多个 Block 时，会重复执行获取 Block、创建连接、发送 <code>DFSPacket</code> 、校验返回等操作直至写入完成。</li>
+</ol>
+<h2 id="BlockManager-的块更新"><a href="#BlockManager-的块更新" class="headerlink" title="BlockManager 的块更新"></a>BlockManager 的块更新</h2><p> <code>DataNode</code>  接收到的 Block 写入完成后， <code>BlockReceiver</code>  中的  <code>PacketResponder</code>  会调用  <code>DataNode.notifyNamenodeReceivedBlock</code>  方法，该方法会把块信息写入到  <code>org.apache.hadoop.hdfs.server.datanode.IncrementalBlockReportManager</code>  里，由线程   <code>IBRTaskHandler</code>  根据条件定时还是即时上报到   <code>NameNode</code>，最终在  <code>DataNode</code>  中调用的是 RPC  <code>namenode.blockReceivedAndDeleted</code>  方法通知  <code>NameNode</code>。</p>
+<p><code>NameNode</code> 的 <code>org.apache.hadoop.hdfs.server.namenode.NameNodeRpcServer</code> 通过方法 <code>blockReceivedAndDeleted</code> 接收到 rpc 请求，获取 <code>BlockManager</code> 实例 <code>bm</code>，把每一个 <code>StorageReceivedDeletedBlocks</code> 对象以线程形式放入到 <code>BlockReportProcessingThread</code> 的队列中。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/ft20082/image/item/block_incremental_manager_data_flow.png" alt="block incremental manager data flow"></p>
+<blockquote>
+<p>DataNode 通过增量更新 NameNode 的 Block 的过程中，以批量形式发送，即在接收到 Receiving 状态的块时是不会即时通知 NameNode 的，只有是 Received 状态的更新会即时发送。 </p>
+</blockquote>
+<p><code>BlockManager.BlockReportProcessingThread</code> 线程会一直从队列里获取任务并执行，当达到最大的持有锁时间时，会退出重新获取锁，防止持有太长时间导致其他写操作超时。<code>BlockReportProcessingThread</code> 执行逻辑</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title function_">processQueue</span><span class="params">()</span> &#123;</span><br><span class="line">  <span class="keyword">while</span> (namesystem.isRunning()) &#123;</span><br><span class="line">    <span class="type">NameNodeMetrics</span> <span class="variable">metrics</span> <span class="operator">=</span> NameNode.getNameNodeMetrics();</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">      <span class="comment">// 从队列中获取任务</span></span><br><span class="line">      <span class="type">Runnable</span> <span class="variable">action</span> <span class="operator">=</span> queue.take();</span><br><span class="line">      <span class="comment">// batch as many operations in the write lock until the queue</span></span><br><span class="line">      <span class="comment">// runs dry, or the max lock hold is reached.</span></span><br><span class="line">      <span class="type">int</span> <span class="variable">processed</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">      namesystem.writeLock();</span><br><span class="line">      <span class="comment">// 可以通过 metrics 添加，可以通过 http://ip:port/jmx 查看</span></span><br><span class="line">      metrics.setBlockOpsQueued(queue.size() + <span class="number">1</span>);</span><br><span class="line">      <span class="keyword">try</span> &#123;</span><br><span class="line">        <span class="type">long</span> <span class="variable">start</span> <span class="operator">=</span> Time.monotonicNow();</span><br><span class="line">        <span class="keyword">do</span> &#123;</span><br><span class="line">          processed++;</span><br><span class="line">          <span class="comment">// 该操作执行的是 BlockManager.processIncrementalBlockReport(DatanodeID nodeID, StorageReceivedDeletedBlocks srdb);</span></span><br><span class="line">          <span class="comment">// 根据类型判断执行  removeStoredBlock / addBlock / processAndHandleReportedBlock</span></span><br><span class="line">          action.run();</span><br><span class="line">          <span class="comment">// 如果超过最大的持有锁的时间，则退出</span></span><br><span class="line">          <span class="comment">// maxLockHoldTime 默认值是 4ms</span></span><br><span class="line">          <span class="keyword">if</span> (Time.monotonicNow() - start &gt; maxLockHoldTime) &#123;</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">          &#125;</span><br><span class="line">          action = queue.poll();</span><br><span class="line">        &#125; <span class="keyword">while</span> (action != <span class="literal">null</span>);</span><br><span class="line">      &#125; <span class="keyword">finally</span> &#123;</span><br><span class="line">        namesystem.writeUnlock(<span class="string">&quot;processQueue&quot;</span>);</span><br><span class="line">        metrics.addBlockOpsBatched(processed - <span class="number">1</span>);</span><br><span class="line">      &#125;</span><br><span class="line">    &#125; <span class="keyword">catch</span> (InterruptedException e) &#123;</span><br><span class="line">      <span class="comment">// ignore unless thread was specifically interrupted.</span></span><br><span class="line">      <span class="keyword">if</span> (Thread.interrupted()) &#123;</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  queue.clear();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="NameNode-RPC-blockReceivedAndDeleted"><a href="#NameNode-RPC-blockReceivedAndDeleted" class="headerlink" title="NameNode RPC blockReceivedAndDeleted"></a>NameNode RPC blockReceivedAndDeleted</h3><p><code>BlockReportProcessingThread</code> 执行内容是 <code>namesystem.processIncrementalBlockReport(nodeReg, r);</code> ，该方法会调用 <code>blockManager.processIncrementalBlockReport(nodeID, srdb)</code> ，最终会根据类型来判断执行 <code>removeStoredBlock</code>、 <code>addBlock</code>、 <code>processAndHandleReportedBlock</code> 。</p>
+<h4 id="removeStoredBlock-移除Block"><a href="#removeStoredBlock-移除Block" class="headerlink" title="removeStoredBlock 移除Block"></a>removeStoredBlock 移除Block</h4><ol>
+<li><code>BlockMap</code>  和  <code>DatanodeStorageInfo</code>  移除 Block信息</li>
+<li>清理 CacheManager 里的 Block 信息</li>
+</ol>
+<h4 id="addBlock-添加-Block"><a href="#addBlock-添加-Block" class="headerlink" title="addBlock 添加 Block"></a>addBlock 添加 Block</h4><ol>
+<li>移除  <code>BlockManager.pendingReconstruction</code>  里的 Block</li>
+<li>执行  <code>processAndHandleReportedBlock</code></li>
+</ol>
+<h4 id="processAndHandleReportedBlock-处理上报-Block"><a href="#processAndHandleReportedBlock-处理上报-Block" class="headerlink" title="processAndHandleReportedBlock 处理上报 Block"></a>processAndHandleReportedBlock 处理上报 Block</h4><ol>
+<li>如果块查找不到，则标记为  <code>invalidate</code></li>
+<li>如果上报副本有效，和  <code>NameNode</code>  有相同的时间戳和长度，则执行添加 Block  <code>addStoredBlock</code>  操作</li>
+<li>如果上报副本无效，则标记为  <code>corrupt</code>，<code>corrupt</code> 块在 Block 完成复制后会被删除</li>
+<li>如果上报副本状态在  <code>NameNode</code>  中为  <code>under construction</code>，将被添加到  <code>BlockUnderConstructionFeature</code>  列表里</li>
+</ol>
+<h3 id="添加存储-Block-操作-addStoredBlock"><a href="#添加存储-Block-操作-addStoredBlock" class="headerlink" title="添加存储 Block 操作 addStoredBlock"></a>添加存储 Block 操作 addStoredBlock</h3><p>修改 <code>(block -&gt; datanode)</code> 映射，从 <code>reconstruction</code> 里移除 block</p>
+<ol>
+<li>检查 block 是否存在或者是否删除，如果不存在或者已删除，则忽略</li>
+<li>添加往  <code>DatanodeStorageInfo</code>  映射里添加 Block</li>
+<li>计算 block 的副本数，如果 storedBlock 的状态是  <code>BlockUCState.COMMITTED</code>  且已经达到了最小副本 ，则执行  <code>completeBlock</code>，该方法最终会调用  <code>convertToCompleteBlock</code>  来修改 Block 的 uc 状态，即 <code>DFSClient</code> 在客户端调用 <code>completeFile</code> 时检查的位置 </li>
+<li>检查冗余数量，如果不需要冗余，则从  <code>neededReconstruction</code>  里删除，如果超过，则执行  <code>invalidateCorruptReplicas</code> ，把 Block 添加到  <code>corruptReplicas</code>  清理冗余。</li>
+</ol>
+<h2 id="小结-1"><a href="#小结-1" class="headerlink" title="小结"></a>小结</h2><p>在 HDFS 客户端写文件的完成后，Block 中的数据节点更新是由 danaNode 节点通过RPC  <code>rpc blockReceivedAndDeleted(BlockReceivedAndDeletedRequestProto)      returns(BlockReceivedAndDeletedResponseProto);</code>  上报到 Namenode 节点，<code>NameNode</code>  把此操作封装成一个 RPC Call 异步执行更新  <code>BlockManage</code>  中  <code>BlockMap</code>  里 <code>BlockInfo</code> 对象。同时修改  <code>DatanodeStorageInfo</code>  里的 Block 信息，执行状态更新是由一个独立的线程 <code>BlockReportProcessingThread</code> 一直执行，该线程在获取锁的最大时间，默认 4 毫秒后，会释放锁，并准备重新获取写入锁并执行。</p>
+<h1 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h1><p><code>DFSClient</code> 调用 <code>completeFile</code> 失败的原因是因为 <code>DataNode</code> 节点虽然通过 RPC <code>blockReceivedAndDeleted</code> 把 Block  的状态 <code>BlockStatus.RECEIVED_BLOCK</code>  上报给 NameNode，由于 NameNode 在处理这个响应的过程中采用异步策略，导致了 BlockManager 处理队列里的内容延迟，没有及时更新 Block 的状态。重试多次查询后依然失败，导致错误发生。</p>
+<h1 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h1><ol>
+<li>优先优化作业，查询是否有占用资源比较大且小文件很多的作业</li>
+<li>可以适当增加重试次数，设置为 6 或 7 次，增加成功的概率</li>
+<li>优化 RPC 队列处理时间和队列时间，解决 RPC 延迟问题</li>
+</ol>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Jake</p>
+  <div class="site-description" itemprop="description">Another BigData Programer Log</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">1</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/ft20082" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;ft20082" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:ft20082@qq.com" title="E-Mail → mailto:ft20082@qq.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="Jake"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Jake</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+    <span title="Symbols count total">19k</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://mist.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a>
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/theme-next/theme-next-pjax@0/pjax.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+  <script>
+var pjax = new Pjax({
+  selectors: [
+    'head title',
+    '#page-configurations',
+    '.content-wrap',
+    '.post-toc-wrap',
+    '.languages',
+    '#pjax'
+  ],
+  switches: {
+    '.post-toc-wrap': Pjax.switches.innerHTML
+  },
+  analytics: false,
+  cacheBust: false,
+  scrollTo : !CONFIG.bookmark.enable
+});
+
+window.addEventListener('pjax:success', () => {
+  document.querySelectorAll('script[data-pjax], script#page-configurations, #pjax script').forEach(element => {
+    var code = element.text || element.textContent || element.innerHTML || '';
+    var parent = element.parentNode;
+    parent.removeChild(element);
+    var script = document.createElement('script');
+    if (element.id) {
+      script.id = element.id;
+    }
+    if (element.className) {
+      script.className = element.className;
+    }
+    if (element.type) {
+      script.type = element.type;
+    }
+    if (element.src) {
+      script.src = element.src;
+      // Force synchronous loading of peripheral JS.
+      script.async = false;
+    }
+    if (element.dataset.pjax !== undefined) {
+      script.dataset.pjax = '';
+    }
+    if (code !== '') {
+      script.appendChild(document.createTextNode(code));
+    }
+    parent.appendChild(script);
+  });
+  NexT.boot.refresh();
+  // Define Motion Sequence & Bootstrap Motion.
+  if (CONFIG.motion.enable) {
+    NexT.motion.integrator
+      .init()
+      .add(NexT.motion.middleWares.subMenu)
+      .add(NexT.motion.middleWares.postList)
+      .bootstrap();
+  }
+  NexT.utils.updateSidebarPosition();
+});
+</script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div id="pjax">
+  
+
+  
+
+    </div>
+</body>
+</html>
